@@ -3,27 +3,23 @@ using namespace std;
 
 int main()
 {
-	int peremennaya, iskomoe;
-	cout << "Введите искомое число." << endl;
-	cin >> iskomoe;
-	if (iskomoe==0) {
-	cout<< "Ноль не может быть искомым"<<endl;
-	}
-	else{
-
-	do {
-		cout << "Введите число"<< endl;
-		cin >> peremennaya;
-		if (peremennaya==iskomoe) {
-			cout << "Найдено искомое число"<< endl;
-		} else if (peremennaya==0) {
-			cout << "Возможно вы ввели ноль или не числовое значение" << endl;
+	int chislo, summa=0;
+	while (cin >> chislo) {
+		if (chislo==0) {
+			cout << "Число ровно нулю. Вывод суммы.";
 			break;
 		} else {
-			continue;
+			if(chislo > 0) {
+				summa=summa+chislo;
+			} else {
+				cout << "Было введено отрицательное число или нечисловое знаечние. Оно не будет суммироваться"<<endl;
+				
+			}
 		}
-	} while (peremennaya!=iskomoe);
 	}
-return 0;
-}
 
+		cout << "Сумма равна:";
+		cout << summa << endl;
+
+	return 0;
+}
